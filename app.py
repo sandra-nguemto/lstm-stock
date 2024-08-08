@@ -120,13 +120,17 @@ model = model.to(config["training"]["device"])
 model_app = torch.load("model.pth")
 
 # Create the Streamlit app
-st.title("PyTorch Model Deployment")
+st.title("Stock Prediction App")
 
 # Upload an image
 uploaded_file = st.file_uploader("Choose a stock...", type=None)
 if uploaded_file is not None:
     # Preprocess the image
-    stock = uploaded_file
+    with open("uploadedfile", "rb") as f:
+        x = pickle.load(f)
+
+
+    stock = x
     # Perform inference
     with torch.no_grad():
         prediction = model(stock)
