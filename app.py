@@ -14,7 +14,13 @@ from alpha_vantage.timeseries import TimeSeries
 import streamlit as st
 import pickle
 
-data_close_price = pickle.load(open("data_close_price.pkl", "rb"))
+import os
+
+cwd = os.getcwd()  # Get the current working directory (cwd)
+files = os.listdir(cwd)  # Get all the files in that directory
+print("Files in %r: %s" % (cwd, files))
+
+# data_close_price = pickle.load(open("data_close_price.pkl", "rb"))
 
 config = {
     "alpha_vantage": {
@@ -132,6 +138,8 @@ if uploaded_file is not None:
     stock = pickle.load(uploaded_file)
     st.write(stock)
     
+
+  
     # Perform inference
     with torch.no_grad():
         prediction = model(stock)
