@@ -123,10 +123,10 @@ model_app = torch.load("model.pth")
 st.title("Stock Prediction App")
 
 # Upload an image
-uploaded_file = st.file_uploader("Choose a stock...", type=None)
+uploaded_file = st.file_uploader("Choose a stock...", type='pkl')
 if uploaded_file is not None:
     # Preprocess the image
-    with open("uploadedfile", "rb") as f:
+    with open("uploadedfile.pkl", "rb") as f:
         x = pickle.load(f)
 
 
