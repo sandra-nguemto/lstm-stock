@@ -75,7 +75,7 @@ class Normalizer():
 
 # normalize
 scaler = Normalizer()
-normalized_data_close_price = scaler.fit_transform(data_close_price)
+# normalized_data_close_price = scaler.fit_transform(data_close_price)
 
 
 class LSTMModel(nn.Module):
@@ -144,7 +144,7 @@ if uploaded_file is not None:
     with torch.no_grad():
         prediction = model(stock)
         prediction = prediction.cpu().detach().numpy()
-        prediction = scaler.inverse_transform(prediction)[0]
+        # prediction = scaler.inverse_transform(prediction)[0]
 
     # Display the results
     st.write(prediction)
