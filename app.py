@@ -14,13 +14,8 @@ from alpha_vantage.timeseries import TimeSeries
 import streamlit as st
 import pickle
 
-import os
 
-cwd = os.getcwd()  # Get the current working directory (cwd)
-files = os.listdir(cwd)  # Get all the files in that directory
-print("Files in %r: %s" % (cwd, files))
-
-# data_close_price = pickle.load(open("data_close_price.pkl", "rb"))
+data_close_price = pickle.load(open("data_close_price.pkl ", "rb"))
 
 config = {
     "alpha_vantage": {
