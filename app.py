@@ -126,10 +126,8 @@ st.title("Stock Prediction App")
 uploaded_file = st.file_uploader("Choose a stock...", type='pkl')
 if uploaded_file is not None:
     # Preprocess the image
-    with open("uploadedfile.pkl", "rb") as f:
-        x = pickle.load(f)
-
-
+    upload = uploaded_file.read()
+    x = pickle.load(upload)
     stock = x
     # Perform inference
     with torch.no_grad():
