@@ -131,7 +131,7 @@ if uploaded_file is not None:
     # Preprocess the image
     # upload = uploaded_file.read()
     stock = pickle.load(uploaded_file)
-    st.write(stock)
+    # st.write(stock)
     
 
   
