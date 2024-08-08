@@ -142,4 +142,4 @@ if uploaded_file is not None:
         prediction = scaler.inverse_transform(prediction)[0]
 
     # Display the results
-    st.write(prediction)
+    st.write("The predicted AAPL price is", prediction)
