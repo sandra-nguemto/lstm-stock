@@ -14,6 +14,7 @@ from alpha_vantage.timeseries import TimeSeries
 import streamlit as st
 import pickle
 
+data_close_price = pickle.load(open("data_close_price.pkl", "rb"))
 
 config = {
     "alpha_vantage": {
@@ -68,6 +69,7 @@ class Normalizer():
 
 # normalize
 scaler = Normalizer()
+normalized_data_close_price = scaler.fit_transform(data_close_price)
 
 
 class LSTMModel(nn.Module):
